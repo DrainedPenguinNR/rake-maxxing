@@ -1,0 +1,258 @@
+[gd_scene format=3 uid="uid://dsvohr7vqav1a"]
+
+[ext_resource type="Script" uid="uid://fsrxsg56hgl1" path="res://Scripts/levelmanager.gd" id="1_6bp64"]
+[ext_resource type="Script" uid="uid://b1gkf4re27bwp" path="res://Scripts/main.gd" id="1_hibaj"]
+[ext_resource type="Script" uid="uid://di25d3ja6cdon" path="res://Scripts/savemanager.gd" id="1_wsu2k"]
+[ext_resource type="Script" uid="uid://bo2xgj5p2pbdn" path="res://Scripts/spawnmanager.gd" id="2_344ge"]
+[ext_resource type="FontFile" uid="uid://06g05q8xicei" path="res://Myfont-Regular.ttf" id="2_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://6gx6dbxh3xx0" path="res://Sprites/shopicon.png" id="2_ynf5e"]
+[ext_resource type="Script" uid="uid://bp3eo56ch6wg7" path="res://Scripts/icondarkener.gd" id="3_hptm8"]
+[ext_resource type="Script" uid="uid://r2cfigvotpu" path="res://Scripts/currencymanager.gd" id="3_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://c00m78456u6b3" path="res://Scenes/rake.tscn" id="4_hptm8"]
+[ext_resource type="Texture2D" uid="uid://cdj8wdystuft3" path="res://Sprites/field.png" id="5_6bp64"]
+[ext_resource type="PackedScene" uid="uid://bl40mu77gpva1" path="res://Scenes/chute.tscn" id="6_6iyac"]
+[ext_resource type="PackedScene" uid="uid://balobvuvkbt84" path="res://Scenes/shopui.tscn" id="10_hptm8"]
+[ext_resource type="Texture2D" uid="uid://exw8njsbdi23" path="res://Sprites/backicon.png" id="12_6iyac"]
+[ext_resource type="Script" uid="uid://b7cgpto5y46ai" path="res://Scripts/escmenu.gd" id="12_fdnlq"]
+[ext_resource type="Texture2D" uid="uid://dmya72jj3m0ma" path="res://Sprites/button.png" id="14_jkdf5"]
+[ext_resource type="AudioStream" uid="uid://d10m2fjawlbat" path="res://audio/click_004.ogg" id="16_h1bgf"]
+[ext_resource type="AudioStream" uid="uid://cq2bap887ijo" path="res://audio/click_005.ogg" id="17_b3802"]
+[ext_resource type="AudioStream" uid="uid://b6r8qwagjv7ik" path="res://audio/soundshelfstudio-ui-error-pop-515668.mp3" id="18_b3802"]
+[ext_resource type="AudioStream" uid="uid://dtar2pvodv5fl" path="res://audio/u_byub5wd934-cashier-quotka-chingquot-sound-effect-129698.mp3" id="19_fevyy"]
+[ext_resource type="Texture2D" uid="uid://d3rwcqm0oh72a" path="res://tree.png" id="22_ee4r6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1403.5713, 1157.1431)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(518, 542)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fdnlq"]
+load_path = "res://.godot/imported/9tileUI.png-d5b8d74c101397b304e151a4246c5cf4.ctex"
+
+[node name="Main" type="Node2D" unique_id=220371572]
+script = ExtResource("1_hibaj")
+
+[node name="SaveManager" type="Node2D" parent="." unique_id=1010035000]
+script = ExtResource("1_wsu2k")
+
+[node name="MoneyCounter" type="Label" parent="." unique_id=1175387459]
+z_index = 10
+offset_left = 28.0
+offset_top = 40.0
+offset_right = 189.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("2_d1ilt")
+theme_override_font_sizes/font_size = 74
+text = "$$$"
+
+[node name="ShopIcon" type="Sprite2D" parent="." unique_id=1875555678]
+modulate = Color(1, 1, 1, 0.5882353)
+z_index = 10
+position = Vector2(118, 941)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("2_ynf5e")
+script = ExtResource("3_hptm8")
+
+[node name="Area2D" type="Area2D" parent="ShopIcon" unique_id=1970215368]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopIcon/Area2D" unique_id=1936994536]
+position = Vector2(16.07138, -3.5715332)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=103574700]
+z_index = -10
+position = Vector2(960, 540)
+texture = ExtResource("5_6bp64")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1998008204]
+position = Vector2(1720.0001, 223)
+scale = Vector2(0.71994257, 0.71994257)
+texture = ExtResource("22_ee4r6")
+script = ExtResource("3_hptm8")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=502839803]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=459989995]
+position = Vector2(71, -72)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1040930098]
+position = Vector2(122, 142)
+rotation = -1.5707964
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("22_ee4r6")
+script = ExtResource("3_hptm8")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D2" unique_id=517007137]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Area2D" unique_id=18863562]
+position = Vector2(71, -72)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=637651016]
+position = Vector2(1844, 1013.00006)
+rotation = 7.3303833
+scale = Vector2(0.3104528, 0.3104528)
+texture = ExtResource("22_ee4r6")
+script = ExtResource("3_hptm8")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D3" unique_id=1576587626]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3/Area2D" unique_id=1427747579]
+position = Vector2(71, -72)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="LevelManager" type="Node2D" parent="." unique_id=1984153116]
+script = ExtResource("1_6bp64")
+
+[node name="SpawnManager" type="Node2D" parent="." unique_id=1310396790]
+script = ExtResource("2_344ge")
+
+[node name="Timer" type="Timer" parent="SpawnManager" unique_id=53065808]
+
+[node name="CurrencyManager" type="Node2D" parent="." unique_id=148375660]
+script = ExtResource("3_ynf5e")
+
+[node name="LeafList" type="Node2D" parent="." unique_id=284092424]
+
+[node name="rake" parent="." unique_id=206219886 instance=ExtResource("4_hptm8")]
+
+[node name="Wall" type="Node2D" parent="." unique_id=1289966988]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall" unique_id=1571600320]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall/StaticBody2D" unique_id=1330280552]
+polygon = PackedVector2Array(0, 1080, -138, 1080, -141, -132, 2059, -144, 2059, 1241, -147, 1251, -138, 1080, 1920, 1080, 1920, 1, 0, 0)
+
+[node name="Chute" parent="." unique_id=599609755 instance=ExtResource("6_6iyac")]
+position = Vector2(960, 540)
+
+[node name="ShopUI" parent="." unique_id=581468918 instance=ExtResource("10_hptm8")]
+visible = false
+
+[node name="EscMenu" type="NinePatchRect" parent="." unique_id=118354696]
+visible = false
+offset_left = 277.0
+offset_top = 35.0
+offset_right = 1619.0
+offset_bottom = 1037.0
+texture = SubResource("CompressedTexture2D_fdnlq")
+patch_margin_left = 126
+patch_margin_top = 138
+patch_margin_right = 99
+patch_margin_bottom = 111
+script = ExtResource("12_fdnlq")
+
+[node name="Back" type="Button" parent="EscMenu" unique_id=129405376]
+layout_mode = 0
+offset_top = -35.0
+offset_right = 216.0
+offset_bottom = 179.0
+flat = true
+
+[node name="Bar" type="TextureRect" parent="EscMenu/Back" unique_id=2021881071]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 18.0
+offset_right = 615.0
+offset_bottom = 658.0
+scale = Vector2(0.3196982, 0.3196982)
+texture = ExtResource("12_6iyac")
+
+[node name="Label" type="Label" parent="EscMenu" unique_id=695832494]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 164.0
+offset_right = 1713.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("2_d1ilt")
+theme_override_font_sizes/font_size = 225
+text = "Paused"
+
+[node name="Button" type="Button" parent="EscMenu" unique_id=830319521]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 399.0
+offset_right = 1122.0
+offset_bottom = 598.0
+
+[node name="Bar" type="TextureRect" parent="EscMenu/Button" unique_id=112155416]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -42.0
+offset_right = 1880.0
+offset_bottom = 1038.0
+scale = Vector2(0.5095762, 0.5095762)
+texture = ExtResource("14_jkdf5")
+
+[node name="Label" type="Label" parent="EscMenu/Button/Bar" unique_id=36187893]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 164.0
+offset_right = 1713.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("2_d1ilt")
+theme_override_font_sizes/font_size = 225
+text = "Resume"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="EscMenu" unique_id=420405750]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 638.0
+offset_right = 1122.0
+offset_bottom = 837.0
+
+[node name="Bar" type="TextureRect" parent="EscMenu/Button2" unique_id=730306771]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -42.0
+offset_right = 1880.0
+offset_bottom = 1038.0
+scale = Vector2(0.5095762, 0.5095762)
+texture = ExtResource("14_jkdf5")
+
+[node name="Label" type="Label" parent="EscMenu/Button2/Bar" unique_id=838359698]
+layout_mode = 0
+offset_left = 202.12874
+offset_top = 166.80528
+offset_right = 1767.1288
+offset_bottom = 381.8053
+theme_override_fonts/font = ExtResource("2_d1ilt")
+theme_override_font_sizes/font_size = 225
+text = "Save and Quit"
+horizontal_alignment = 1
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="." unique_id=2066551787]
+stream = ExtResource("16_h1bgf")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=1629137565]
+stream = ExtResource("17_b3802")
+volume_db = 2.405
+
+[node name="Error" type="AudioStreamPlayer2D" parent="." unique_id=41351977]
+stream = ExtResource("18_b3802")
+
+[node name="Chacing" type="AudioStreamPlayer2D" parent="." unique_id=359948363]
+stream = ExtResource("19_fevyy")
+volume_db = 2.405
+
+[connection signal="mouse_entered" from="ShopIcon/Area2D" to="ShopIcon" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="ShopIcon/Area2D" to="ShopIcon" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Sprite2D/Area2D" to="Sprite2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/Area2D" to="Sprite2D" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Sprite2D2/Area2D" to="Sprite2D2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D2/Area2D" to="Sprite2D2" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Sprite2D3/Area2D" to="Sprite2D3" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D3/Area2D" to="Sprite2D3" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="EscMenu/Back" to="." method="_on_hover_darken" binds= [NodePath("EscMenu/Back/Bar")]]
+[connection signal="mouse_exited" from="EscMenu/Back" to="." method="_on_unhover_lighen" binds= [NodePath("EscMenu/Back/Bar")]]
+[connection signal="pressed" from="EscMenu/Back" to="EscMenu" method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="EscMenu/Button" to="." method="_on_hover_darken" binds= [NodePath("EscMenu/Button/Bar")]]
+[connection signal="mouse_exited" from="EscMenu/Button" to="." method="_on_unhover_lighen" binds= [NodePath("EscMenu/Button/Bar")]]
+[connection signal="pressed" from="EscMenu/Button" to="EscMenu" method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="EscMenu/Button2" to="." method="_on_hover_darken" binds= [NodePath("EscMenu/Button2/Bar")]]
+[connection signal="mouse_exited" from="EscMenu/Button2" to="." method="_on_unhover_lighen" binds= [NodePath("EscMenu/Button2/Bar")]]
+[connection signal="pressed" from="EscMenu/Button2" to="EscMenu" method="_on_quit_to_menu_pressed"]

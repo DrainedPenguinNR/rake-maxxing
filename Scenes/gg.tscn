@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dma0a15ks1sso"]
+
+[ext_resource type="Script" uid="uid://b03vfmdyiny73" path="res://Scripts/gg.gd" id="1_4cahi"]
+[ext_resource type="Texture2D" uid="uid://cdj8wdystuft3" path="res://Sprites/field.png" id="1_itpfc"]
+[ext_resource type="Texture2D" uid="uid://dmya72jj3m0ma" path="res://Sprites/button.png" id="2_4cahi"]
+[ext_resource type="FontFile" uid="uid://06g05q8xicei" path="res://Myfont-Regular.ttf" id="3_1cle0"]
+
+[node name="GG" type="Control" unique_id=33414442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4cahi")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1404434596]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_itpfc")
+
+[node name="TitleBar" type="TextureRect" parent="." unique_id=1647922084]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_4cahi")
+
+[node name="Label" type="Label" parent="TitleBar" unique_id=597497292]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 164.0
+offset_right = 1713.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("3_1cle0")
+theme_override_font_sizes/font_size = 225
+text = "Congrats!!!!!!!!"
+
+[node name="Label" type="Label" parent="." unique_id=1509006515]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 518.0
+offset_right = 1967.0
+offset_bottom = 733.0
+theme_override_fonts/font = ExtResource("3_1cle0")
+theme_override_font_sizes/font_size = 225
+text = "you win!"
+
+[node name="Button2" type="Button" parent="." unique_id=767711794]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 805.0
+offset_right = 1395.0
+offset_bottom = 1004.0
+
+[node name="Bar" type="TextureRect" parent="Button2" unique_id=1634369422]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -42.0
+offset_right = 1880.0
+offset_bottom = 1038.0
+scale = Vector2(0.5095762, 0.5095762)
+texture = ExtResource("2_4cahi")
+
+[node name="Label" type="Label" parent="Button2/Bar" unique_id=1276247955]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 164.0
+offset_right = 1713.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("3_1cle0")
+theme_override_font_sizes/font_size = 225
+text = "Back to menu"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

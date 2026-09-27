@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://vifi3rtaw8fy"]
+
+[ext_resource type="FontFile" uid="uid://06g05q8xicei" path="res://Myfont-Regular.ttf" id="1_7papf"]
+[ext_resource type="Script" uid="uid://bdg5lh0p8gftf" path="res://Scripts/moneydrop.gd" id="1_aiy7g"]
+
+[node name="MoneyDrop" type="Label" unique_id=319791785]
+offset_right = 42.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0.28235295, 0, 1)
+theme_override_fonts/font = ExtResource("1_7papf")
+theme_override_font_sizes/font_size = 50
+text = "$$$"
+script = ExtResource("1_aiy7g")
+
+[node name="Timer" type="Timer" parent="." unique_id=605178305]

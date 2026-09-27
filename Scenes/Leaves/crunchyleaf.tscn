@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://loau4346rdih"]
+
+[ext_resource type="Texture2D" uid="uid://daoit0a3wiq6i" path="res://Sprites/crunchyLeaf.png" id="1_720wt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 27.018513
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 28.01785
+
+[node name="YellowLeaf" type="RigidBody2D" unique_id=2022341457]
+collision_layer = 2
+gravity_scale = 0.0
+linear_damp = 10.0
+angular_damp = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1131690247]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="CollectionArea" type="Area2D" parent="." unique_id=1052786299]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionArea" unique_id=969042581]
+shape = SubResource("CircleShape2D_yf5fn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1083478589]
+position = Vector2(0, 6.0000005)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_720wt")

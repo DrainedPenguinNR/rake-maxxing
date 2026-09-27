@@ -1,0 +1,465 @@
+[gd_scene format=3 uid="uid://dwt0ximkq2q75"]
+
+[ext_resource type="Script" uid="uid://ctt75v5lwyp1o" path="res://Scripts/mainmenu.gd" id="1_c7wuu"]
+[ext_resource type="Texture2D" uid="uid://cdj8wdystuft3" path="res://Sprites/field.png" id="1_rtnl3"]
+[ext_resource type="Texture2D" uid="uid://dmya72jj3m0ma" path="res://Sprites/button.png" id="2_v4pkt"]
+[ext_resource type="FontFile" uid="uid://06g05q8xicei" path="res://Myfont-Regular.ttf" id="3_lah54"]
+[ext_resource type="Texture2D" uid="uid://de8g07n532bwk" path="res://Sprites/settingsicon.png" id="4_lah54"]
+[ext_resource type="Texture2D" uid="uid://dvjildsukbj05" path="res://Sprites/exiticon.png" id="5_5326e"]
+[ext_resource type="Script" uid="uid://bevbpmfjnb71a" path="res://Scripts/howtomenu.gd" id="6_awugs"]
+[ext_resource type="Texture2D" uid="uid://exw8njsbdi23" path="res://Sprites/backicon.png" id="6_t8w0y"]
+[ext_resource type="Texture2D" uid="uid://c3bourwp8ys3t" path="res://Sprites/fullrake.png" id="7_eybw1"]
+[ext_resource type="Texture2D" uid="uid://b2q841j7dgddm" path="res://Sprites/mouseiconblank.png" id="8_hu3kb"]
+[ext_resource type="Texture2D" uid="uid://c7ehe2rou7vie" path="res://Sprites/mouseiconmove.png" id="9_vv4ip"]
+[ext_resource type="Texture2D" uid="uid://bd8c1uah5g3ad" path="res://Sprites/mouseiconleft.png" id="10_eybw1"]
+[ext_resource type="Texture2D" uid="uid://1ydk1js1rh4d" path="res://Sprites/skeyicon.png" id="11_vv4ip"]
+[ext_resource type="Texture2D" uid="uid://dxva5dux5jgft" path="res://Sprites/skeyiconpressed.png" id="12_awugs"]
+[ext_resource type="Script" uid="uid://cfr0bmhp0kmgo" path="res://Scripts/settingsmenu.gd" id="15_2jq6c"]
+[ext_resource type="Texture2D" uid="uid://cn2s1gt8u63ji" path="res://Sprites/root.png" id="15_m56cs"]
+[ext_resource type="AudioStream" uid="uid://d10m2fjawlbat" path="res://audio/click_004.ogg" id="16_72gy5"]
+[ext_resource type="AudioStream" uid="uid://cq2bap887ijo" path="res://audio/click_005.ogg" id="17_8wkh3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_awugs"]
+load_path = "res://.godot/imported/9tileUI.png-d5b8d74c101397b304e151a4246c5cf4.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hu3kb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vv4ip")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_hu3kb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(952, 738)]
+}
+
+[sub_resource type="Animation" id="Animation_vv4ip"]
+resource_name = "pull"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(0.57434845, 2, 0.13397169),
+"update": 0,
+"values": [Vector2(952, 684.305), Vector2(811.64, 684.305), Vector2(952, 684.305)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_awugs"]
+_data = {
+&"RESET": SubResource("Animation_hu3kb"),
+&"pull": SubResource("Animation_vv4ip")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7wuu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hu3kb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eybw1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jq6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_vv4ip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_awugs")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Control" unique_id=433189444]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c7wuu")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1621099613]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rtnl3")
+
+[node name="TitleBar" type="TextureRect" parent="." unique_id=1692981378]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_v4pkt")
+
+[node name="Label" type="Label" parent="TitleBar" unique_id=1231734371]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 164.0
+offset_right = 1713.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("3_lah54")
+theme_override_font_sizes/font_size = 225
+text = "RakeMaxxing"
+
+[node name="Button" type="Button" parent="." unique_id=315201937]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 549.0
+offset_right = 1395.0
+offset_bottom = 748.0
+
+[node name="Bar" type="TextureRect" parent="Button" unique_id=1033325212]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -42.0
+offset_right = 1880.0
+offset_bottom = 1038.0
+scale = Vector2(0.5095762, 0.5095762)
+texture = ExtResource("2_v4pkt")
+
+[node name="Label" type="Label" parent="Button/Bar" unique_id=317040417]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 164.0
+offset_right = 1713.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("3_lah54")
+theme_override_font_sizes/font_size = 225
+text = "Start"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="." unique_id=1523605807]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 805.0
+offset_right = 1395.0
+offset_bottom = 1004.0
+
+[node name="Bar" type="TextureRect" parent="Button2" unique_id=1222218465]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -42.0
+offset_right = 1880.0
+offset_bottom = 1038.0
+scale = Vector2(0.5095762, 0.5095762)
+texture = ExtResource("2_v4pkt")
+
+[node name="Label" type="Label" parent="Button2/Bar" unique_id=543357066]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 164.0
+offset_right = 1713.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("3_lah54")
+theme_override_font_sizes/font_size = 225
+text = "How To"
+horizontal_alignment = 1
+
+[node name="Button3" type="Button" parent="." unique_id=1104114956]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 635.0
+offset_right = 230.0
+offset_bottom = 849.0
+flat = true
+
+[node name="Bar" type="TextureRect" parent="Button3" unique_id=334662212]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 640.0
+scale = Vector2(0.3196982, 0.3196982)
+texture = ExtResource("4_lah54")
+
+[node name="Button4" type="Button" parent="." unique_id=2095462730]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 858.0
+offset_right = 230.0
+offset_bottom = 1072.0
+flat = true
+
+[node name="Bar" type="TextureRect" parent="Button4" unique_id=442828056]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 640.0
+scale = Vector2(0.3196982, 0.3196982)
+texture = ExtResource("5_5326e")
+
+[node name="HowToMenu" type="NinePatchRect" parent="." unique_id=379908017]
+visible = false
+layout_mode = 0
+offset_left = 277.0
+offset_top = 35.0
+offset_right = 1619.0
+offset_bottom = 1037.0
+texture = SubResource("CompressedTexture2D_awugs")
+patch_margin_left = 126
+patch_margin_top = 138
+patch_margin_right = 99
+patch_margin_bottom = 111
+script = ExtResource("6_awugs")
+
+[node name="Back" type="Button" parent="HowToMenu" unique_id=939476792]
+layout_mode = 0
+offset_top = -35.0
+offset_right = 216.0
+offset_bottom = 179.0
+flat = true
+
+[node name="Bar" type="TextureRect" parent="HowToMenu/Back" unique_id=1909795908]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 18.0
+offset_right = 615.0
+offset_bottom = 658.0
+scale = Vector2(0.3196982, 0.3196982)
+texture = ExtResource("6_t8w0y")
+
+[node name="Label" type="Label" parent="HowToMenu" unique_id=563166954]
+layout_mode = 0
+offset_left = -58.0
+offset_top = 109.0
+offset_right = 1403.0
+offset_bottom = 324.0
+theme_override_fonts/font = ExtResource("3_lah54")
+theme_override_font_sizes/font_size = 104
+text = "How To"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HowToMenu" unique_id=1443194563]
+layout_mode = 0
+offset_left = -58.0
+offset_top = 220.0
+offset_right = 1403.0
+offset_bottom = 435.0
+theme_override_fonts/font = ExtResource("3_lah54")
+theme_override_font_sizes/font_size = 60
+text = "rake follows mouse"
+horizontal_alignment = 1
+
+[node name="Rake" type="TextureRect" parent="HowToMenu" unique_id=998664740]
+layout_mode = 0
+offset_left = 951.7003
+offset_top = 427.95337
+offset_right = 2231.7002
+offset_bottom = 1067.9534
+rotation = 3.1415927
+scale = Vector2(0.2593021, 0.2593021)
+texture = ExtResource("7_eybw1")
+
+[node name="mousemove" type="AnimatedSprite2D" parent="HowToMenu" unique_id=1290497556]
+position = Vector2(501.70032, 343.95337)
+scale = Vector2(0.19281344, 0.19281344)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+frame_progress = 0.44846338
+speed_scale = 0.25
+
+[node name="Label3" type="Label" parent="HowToMenu" unique_id=564108941]
+layout_mode = 0
+offset_left = -58.0
+offset_top = 447.0
+offset_right = 1403.0
+offset_bottom = 662.0
+theme_override_fonts/font = ExtResource("3_lah54")
+theme_override_font_sizes/font_size = 60
+text = "click to pull rake"
+horizontal_alignment = 1
+
+[node name="Rake2" type="TextureRect" parent="HowToMenu" unique_id=1642570687]
+layout_mode = 0
+offset_left = 952.0
+offset_top = 684.305
+offset_right = 2232.003
+offset_bottom = 1324.3049
+rotation = 3.1415927
+scale = Vector2(0.2593021, 0.2593021)
+texture = ExtResource("7_eybw1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HowToMenu/Rake2" unique_id=205187324]
+libraries/ = SubResource("AnimationLibrary_awugs")
+autoplay = &"pull"
+
+[node name="mousemove2" type="AnimatedSprite2D" parent="HowToMenu" unique_id=1432294679]
+position = Vector2(501.70032, 601.9534)
+scale = Vector2(0.19281344, 0.19281344)
+sprite_frames = SubResource("SpriteFrames_c7wuu")
+autoplay = "default"
+frame_progress = 0.6091004
+speed_scale = 0.25
+
+[node name="Label4" type="Label" parent="HowToMenu" unique_id=1438729187]
+layout_mode = 0
+offset_left = -172.0
+offset_top = 805.0
+offset_right = 1289.0
+offset_bottom = 1020.0
+theme_override_fonts/font = ExtResource("3_lah54")
+theme_override_font_sizes/font_size = 60
+text = "Press S for shop"
+horizontal_alignment = 1
+
+[node name="mousemove3" type="AnimatedSprite2D" parent="HowToMenu" unique_id=984213182]
+position = Vector2(937, 846)
+scale = Vector2(0.19281344, 0.19281344)
+sprite_frames = SubResource("SpriteFrames_2jq6c")
+autoplay = "default"
+frame_progress = 0.12784728
+speed_scale = 0.25
+
+[node name="Label5" type="Label" parent="HowToMenu" unique_id=1784814821]
+layout_mode = 0
+offset_left = -196.0
+offset_top = 693.0
+offset_right = 1265.0
+offset_bottom = 908.0
+theme_override_fonts/font = ExtResource("3_lah54")
+theme_override_font_sizes/font_size = 60
+text = "Wiggle mouse to break roots"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="HowToMenu" unique_id=1558676933]
+position = Vector2(1087, 728)
+scale = Vector2(0.25123242, 0.25123242)
+texture = ExtResource("15_m56cs")
+
+[node name="SettingsMenu" type="NinePatchRect" parent="." unique_id=1174867499]
+visible = false
+layout_mode = 0
+offset_left = 277.0
+offset_top = 35.0
+offset_right = 1619.0
+offset_bottom = 1037.0
+texture = SubResource("CompressedTexture2D_awugs")
+patch_margin_left = 126
+patch_margin_top = 138
+patch_margin_right = 99
+patch_margin_bottom = 111
+script = ExtResource("15_2jq6c")
+
+[node name="Back" type="Button" parent="SettingsMenu" unique_id=670281191]
+layout_mode = 0
+offset_top = -35.0
+offset_right = 216.0
+offset_bottom = 179.0
+flat = true
+
+[node name="Bar" type="TextureRect" parent="SettingsMenu/Back" unique_id=1260617221]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 18.0
+offset_right = 615.0
+offset_bottom = 658.0
+scale = Vector2(0.3196982, 0.3196982)
+texture = ExtResource("6_t8w0y")
+
+[node name="Button" type="Button" parent="SettingsMenu" unique_id=604210907]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 622.0
+offset_right = 1122.0
+offset_bottom = 821.0
+
+[node name="Bar" type="TextureRect" parent="SettingsMenu/Button" unique_id=2124883887]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -42.0
+offset_right = 1880.0
+offset_bottom = 1038.0
+scale = Vector2(0.5095762, 0.5095762)
+texture = ExtResource("2_v4pkt")
+
+[node name="Label" type="Label" parent="SettingsMenu/Button/Bar" unique_id=221357874]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 164.0
+offset_right = 1713.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("3_lah54")
+theme_override_font_sizes/font_size = 225
+text = "Wipe Data"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="SettingsMenu" unique_id=1805734679]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 324.0
+offset_right = 1134.0
+offset_bottom = 357.01
+scale = Vector2(1, 2.91)
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Label" type="Label" parent="SettingsMenu" unique_id=1237392951]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 153.0
+offset_right = 1325.0
+offset_bottom = 368.0
+theme_override_fonts/font = ExtResource("3_lah54")
+theme_override_font_sizes/font_size = 124
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=913202391]
+stream = ExtResource("16_72gy5")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=538261289]
+stream = ExtResource("17_8wkh3")
+volume_db = 2.405
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_hover" binds= [NodePath("Button/Bar")]]
+[connection signal="mouse_exited" from="Button" to="." method="_on_unhover" binds= [NodePath("Button/Bar")]]
+[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Button2" to="." method="_on_hover" binds= [NodePath("Button2/Bar")]]
+[connection signal="mouse_exited" from="Button2" to="." method="_on_unhover" binds= [NodePath("Button2/Bar")]]
+[connection signal="pressed" from="Button2" to="." method="_on_how_to_pressed"]
+[connection signal="mouse_entered" from="Button3" to="." method="_on_hover" binds= [NodePath("Button3/Bar")]]
+[connection signal="mouse_exited" from="Button3" to="." method="_on_unhover" binds= [NodePath("Button3/Bar")]]
+[connection signal="pressed" from="Button3" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="Button4" to="." method="_on_hover" binds= [NodePath("Button4/Bar")]]
+[connection signal="mouse_exited" from="Button4" to="." method="_on_unhover" binds= [NodePath("Button4/Bar")]]
+[connection signal="pressed" from="Button4" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="HowToMenu/Back" to="." method="_on_hover" binds= [NodePath("HowToMenu/Back/Bar")]]
+[connection signal="mouse_exited" from="HowToMenu/Back" to="." method="_on_unhover" binds= [NodePath("HowToMenu/Back/Bar")]]
+[connection signal="pressed" from="HowToMenu/Back" to="HowToMenu" method="_on_back_pressed"]
+[connection signal="mouse_entered" from="SettingsMenu/Back" to="." method="_on_hover" binds= [NodePath("SettingsMenu/Back/Bar")]]
+[connection signal="mouse_exited" from="SettingsMenu/Back" to="." method="_on_unhover" binds= [NodePath("SettingsMenu/Back/Bar")]]
+[connection signal="pressed" from="SettingsMenu/Back" to="SettingsMenu" method="_on_back_pressed"]
+[connection signal="mouse_entered" from="SettingsMenu/Button" to="." method="_on_hover" binds= [NodePath("SettingsMenu/Button/Bar")]]
+[connection signal="mouse_exited" from="SettingsMenu/Button" to="." method="_on_unhover" binds= [NodePath("SettingsMenu/Button/Bar")]]
+[connection signal="pressed" from="SettingsMenu/Button" to="." method="_on_wipe_data_pressed"]
+[connection signal="value_changed" from="SettingsMenu/HSlider" to="." method="_on_volume_slider_value_changed"]

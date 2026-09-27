@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dwmdh41lk4qxp"]
+
+[ext_resource type="Script" uid="uid://bpw2v1lq13cou" path="res://Scripts/root.gd" id="1_8pvmw"]
+[ext_resource type="Texture2D" uid="uid://cn2s1gt8u63ji" path="res://Sprites/root.png" id="1_i04dx"]
+[ext_resource type="FontFile" uid="uid://06g05q8xicei" path="res://Myfont-Regular.ttf" id="3_vnucn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(125, 47)
+
+[node name="Root" type="Node2D" unique_id=552555547]
+script = ExtResource("1_8pvmw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=930355501]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_i04dx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2066004623]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1955917342]
+position = Vector2(1.5, -8.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=310811644]
+modulate = Color(18.892157, 0, 0, 1)
+self_modulate = Color(18.892157, 0, 0, 1)
+z_index = 2
+offset_left = 62.0
+offset_top = -52.0
+offset_right = 66.0
+offset_bottom = -25.0
+rotation = 1.5707964
+scale = Vector2(3.715, 4.565)
+theme_override_fonts/font = ExtResource("3_vnucn")
+value = 15.23
+fill_mode = 3
+show_percentage = false
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_trap_area_area_entered"]

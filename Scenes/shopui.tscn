@@ -1,0 +1,306 @@
+[gd_scene format=3 uid="uid://balobvuvkbt84"]
+
+[ext_resource type="Script" uid="uid://ccrkb80onjc75" path="res://Scripts/shopui.gd" id="1_kpqa8"]
+[ext_resource type="FontFile" uid="uid://06g05q8xicei" path="res://Myfont-Regular.ttf" id="2_8kx64"]
+[ext_resource type="Texture2D" uid="uid://gis8cdgff1ma" path="res://Sprites/yellowleafupgradeicon.png" id="3_8cjla"]
+[ext_resource type="Texture2D" uid="uid://lqdydcx8kbhj" path="res://Sprites/crunchyleafupgradeicon.png" id="4_4k3te"]
+[ext_resource type="Texture2D" uid="uid://nbkkmjqqdc7g" path="res://Sprites/rainbowleafupgradeicon.png" id="5_k0dao"]
+[ext_resource type="Texture2D" uid="uid://dx6oxrxjhw3dg" path="res://Sprites/upgradeicon.png" id="6_4k3te"]
+[ext_resource type="Texture2D" uid="uid://b2jqitk7ul37g" path="res://Sprites/silverleafupgradeicon.png" id="6_ipew4"]
+[ext_resource type="Texture2D" uid="uid://b0ygl2ys5nuj3" path="res://Sprites/crystalleafupgradeicon.png" id="7_4i086"]
+[ext_resource type="Texture2D" uid="uid://dqcoe8f4x8rx1" path="res://Sprites/leafvolumeupgradeicon.png" id="8_sp36n"]
+[ext_resource type="Texture2D" uid="uid://dyj3d3tand7br" path="res://Sprites/rootupgradeicon.png" id="9_rcdt8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8kx64"]
+load_path = "res://.godot/imported/9tileUI.png-d5b8d74c101397b304e151a4246c5cf4.ctex"
+
+[node name="ShopUI" type="Control" unique_id=581468918]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kpqa8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=702795302]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 40.0
+offset_right = 1636.0
+offset_bottom = 1042.0
+texture = SubResource("CompressedTexture2D_8kx64")
+patch_margin_left = 126
+patch_margin_top = 138
+patch_margin_right = 99
+patch_margin_bottom = 111
+
+[node name="Label" type="Label" parent="." unique_id=405925836]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 185.0
+offset_right = 1220.0
+offset_bottom = 254.0
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 50
+text = "Welcome to the Shop"
+
+[node name="YellowUpButton" type="Button" parent="." unique_id=1850260327]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 326.0
+offset_right = 1159.0
+offset_bottom = 974.0
+scale = Vector2(0.205, 0.205)
+icon = ExtResource("3_8cjla")
+flat = true
+
+[node name="LevelText" type="Label" parent="YellowUpButton" unique_id=1713152965]
+layout_mode = 0
+offset_top = 648.7805
+offset_right = 701.0
+offset_bottom = 838.7805
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "level: 1/10"
+
+[node name="PriceText" type="Label" parent="YellowUpButton" unique_id=363472612]
+layout_mode = 0
+offset_top = 839.0244
+offset_right = 701.0
+offset_bottom = 1029.0244
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "Price: $10"
+
+[node name="CrunchUpButton" type="Button" parent="." unique_id=597623955]
+layout_mode = 0
+offset_left = 787.0
+offset_top = 326.0
+offset_right = 1435.0
+offset_bottom = 974.0
+scale = Vector2(0.205, 0.205)
+icon = ExtResource("4_4k3te")
+flat = true
+
+[node name="LevelText" type="Label" parent="CrunchUpButton" unique_id=396299501]
+layout_mode = 0
+offset_top = 648.7805
+offset_right = 701.0
+offset_bottom = 838.7805
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "level: 1/10"
+
+[node name="PriceText" type="Label" parent="CrunchUpButton" unique_id=386308659]
+layout_mode = 0
+offset_top = 839.0244
+offset_right = 701.0
+offset_bottom = 1029.0244
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "Price: $10"
+
+[node name="RainbowUpButton" type="Button" parent="." unique_id=1468094525]
+layout_mode = 0
+offset_left = 1054.0
+offset_top = 326.00003
+offset_right = 1702.0
+offset_bottom = 974.0
+scale = Vector2(0.205, 0.205)
+icon = ExtResource("5_k0dao")
+flat = true
+
+[node name="LevelText" type="Label" parent="RainbowUpButton" unique_id=702049879]
+layout_mode = 0
+offset_top = 648.7805
+offset_right = 701.0
+offset_bottom = 838.7805
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "level: 1/10"
+
+[node name="PriceText" type="Label" parent="RainbowUpButton" unique_id=1886829690]
+layout_mode = 0
+offset_top = 839.0244
+offset_right = 701.0
+offset_bottom = 1029.0244
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "Price: $10"
+
+[node name="UpButton2" type="Button" parent="." unique_id=1247711]
+layout_mode = 0
+offset_left = 1305.0001
+offset_top = 326.0
+offset_right = 1953.0001
+offset_bottom = 974.0
+scale = Vector2(0.205, 0.205)
+icon = ExtResource("6_ipew4")
+flat = true
+
+[node name="LevelText" type="Label" parent="UpButton2" unique_id=1935615591]
+layout_mode = 0
+offset_top = 648.7805
+offset_right = 701.0
+offset_bottom = 838.7805
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "level: 1/10"
+
+[node name="PriceText" type="Label" parent="UpButton2" unique_id=1325640643]
+layout_mode = 0
+offset_top = 839.0244
+offset_right = 701.0
+offset_bottom = 1029.0244
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "Price: $10"
+
+[node name="UpButton3" type="Button" parent="." unique_id=437760155]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 620.0
+offset_right = 1292.0
+offset_bottom = 1268.0
+scale = Vector2(0.205, 0.205)
+icon = ExtResource("7_4i086")
+flat = true
+
+[node name="LevelText" type="Label" parent="UpButton3" unique_id=1361202093]
+layout_mode = 0
+offset_top = 648.7805
+offset_right = 701.0
+offset_bottom = 838.7805
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "level: 1/10"
+
+[node name="PriceText" type="Label" parent="UpButton3" unique_id=1326003410]
+layout_mode = 0
+offset_top = 839.0244
+offset_right = 701.0
+offset_bottom = 1029.0244
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "Price: $10"
+
+[node name="UpButton4" type="Button" parent="." unique_id=809666630]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 620.0
+offset_right = 1568.0
+offset_bottom = 1268.0
+scale = Vector2(0.205, 0.205)
+icon = ExtResource("8_sp36n")
+flat = true
+
+[node name="LevelText" type="Label" parent="UpButton4" unique_id=2085512057]
+layout_mode = 0
+offset_top = 648.7805
+offset_right = 701.0
+offset_bottom = 838.7805
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "level: 1/10"
+
+[node name="PriceText" type="Label" parent="UpButton4" unique_id=1593759684]
+layout_mode = 0
+offset_top = 839.0244
+offset_right = 701.0
+offset_bottom = 1029.0244
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "Price: $10"
+
+[node name="UpButton5" type="Button" parent="." unique_id=1217867621]
+layout_mode = 0
+offset_left = 1054.0
+offset_top = 1557.0
+offset_right = 1702.0
+offset_bottom = 2205.0
+scale = Vector2(0.205, 0.205)
+icon = ExtResource("9_rcdt8")
+flat = true
+
+[node name="LevelText" type="Label" parent="UpButton5" unique_id=1043663706]
+layout_mode = 0
+offset_top = 648.7805
+offset_right = 701.0
+offset_bottom = 838.7805
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "level: 1/10"
+
+[node name="PriceText" type="Label" parent="UpButton5" unique_id=88043518]
+layout_mode = 0
+offset_top = 839.0244
+offset_right = 701.0
+offset_bottom = 1029.0244
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "Price: $10"
+
+[node name="UpButton6" type="Button" parent="." unique_id=621038860]
+layout_mode = 0
+offset_left = 1187.0
+offset_top = 620.0
+offset_right = 1835.0
+offset_bottom = 1268.0
+scale = Vector2(0.205, 0.205)
+icon = ExtResource("6_4k3te")
+flat = true
+
+[node name="LevelText" type="Label" parent="UpButton6" unique_id=215526481]
+layout_mode = 0
+offset_top = 648.7805
+offset_right = 701.0
+offset_bottom = 838.7805
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "level: 1/10"
+
+[node name="PriceText" type="Label" parent="UpButton6" unique_id=60399771]
+layout_mode = 0
+offset_top = 839.0244
+offset_right = 701.0
+offset_bottom = 1029.0244
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 142
+text = "Price: $10"
+
+[node name="ToolTip" type="NinePatchRect" parent="." unique_id=807256787]
+visible = false
+layout_mode = 0
+offset_top = 539.0
+offset_right = 730.0
+offset_bottom = 961.0
+texture = SubResource("CompressedTexture2D_8kx64")
+patch_margin_left = 126
+patch_margin_top = 138
+patch_margin_right = 99
+patch_margin_bottom = 111
+
+[node name="Title" type="Label" parent="ToolTip" unique_id=1863891162]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 113.0
+offset_right = 284.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 40
+text = "TITLE"
+
+[node name="Description" type="Label" parent="ToolTip" unique_id=17160212]
+custom_maximum_size = Vector2(500, 150)
+layout_mode = 0
+offset_left = 122.0
+offset_top = 162.0
+offset_right = 335.0
+offset_bottom = 191.0
+theme_override_fonts/font = ExtResource("2_8kx64")
+theme_override_font_sizes/font_size = 30
+text = "DESCRIPTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="YellowUpButton" to="." method="_on_button_hovered"]

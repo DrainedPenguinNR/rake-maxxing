@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bl40mu77gpva1"]
+
+[ext_resource type="Script" uid="uid://bbwc1f1skad1m" path="res://Scripts/chute.gd" id="1_2fkmg"]
+[ext_resource type="Texture2D" uid="uid://bjxipqv8r75xy" path="res://Sprites/chute.png" id="2_4pkb8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 58.694122
+
+[node name="Chute" type="Node2D" unique_id=599609755]
+z_index = -1
+script = ExtResource("1_2fkmg")
+
+[node name="CollectionArea" type="Area2D" parent="." unique_id=1886870787]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionArea" unique_id=1403527570]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Chute" type="Sprite2D" parent="." unique_id=495672755]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_4pkb8")
+
+[connection signal="area_entered" from="CollectionArea" to="." method="_on_collection_area_area_entered"]

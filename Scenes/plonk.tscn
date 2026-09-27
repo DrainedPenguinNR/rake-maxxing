@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://rn5p2p4uqqi3"]
+
+[ext_resource type="AudioStream" uid="uid://b11ec5lgcmbsb" path="res://audio/freesound_gamestudio-drop-coin-384921.mp3" id="1_ach46"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1600141892]
+stream = ExtResource("1_ach46")
